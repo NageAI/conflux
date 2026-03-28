@@ -182,13 +182,13 @@ conflux/
 
 ## Nage AI model portfolio
 
-| Model | Size | Source | Status |
-|-------|------|--------|--------|
-| **Fehm** | 8B | Llama-3.1-8B | Validated (val loss -6.4%) |
-| **Forge** | 14B | CodeLlama-13B | Planned |
-| **Cortex** | 14B | Llama + Mistral | Planned (dual-source) |
-| **Naksh** | 8B | Qwen3-Coder-Next | Planned |
-| **Nuve** | 8B | Fehm (distill) | Planned |
+| Model | Script | Size | Source | Role | Status |
+|-------|--------|------|--------|------|--------|
+| **Chi** | 知 (Japanese) | 8B | Fehm (distill) | Gateway & Edge | Planned · Phase 6 |
+| **Fehm** | فهم (Arabic) | 8B | Llama-3.1-8B | General assistant | ✅ SFT + DPO complete |
+| **Ming** | 明 (Chinese) | 8B | TBD | Code expert | Planned · Phase 5 |
+| **Cortex** | Latin | 14B | Llama + Mistral | Orchestrator | Planned · Phase 4 |
+| **Bilge** | Old Turkish | 14B | TBD | ML expert | Planned · Phase 3 |
 
 ## Citation
 
