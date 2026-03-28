@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conflux-ft"
+version = "0.3.0"
+description = "Cross-architecture Optimized N-source Fine-tuning via Low-rank Unified eXtraction"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "Ömer Asım"}]
+requires-python = ">=3.10"
+keywords = ["fine-tuning", "lora", "qlora", "cross-architecture", "peft", "llm"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.1.0",
+    "numpy>=1.24.0",
+]
+
+[project.optional-dependencies]
+full = [
+    "transformers>=4.40.0",
+    "peft>=0.10.0",
+    "bitsandbytes>=0.43.0",
+    "trl>=0.8.0",
+    "unsloth>=2024.4",
+    "scipy>=1.11.0",
+    "datasets>=2.18.0",
+    "accelerate>=0.28.0",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nage-ai/conflux"
+Documentation = "https://docs.nage.ai/conflux"
+
+[tool.setuptools.packages.find]
+include = ["conflux*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B905", "SIM108"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["conflux"]
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+no_strict_optional = true
+warn_unused_configs = true
+
+[tool.coverage.run]
+source = ["conflux"]
+omit = ["tests/*", "examples/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+fail_under = 70
